@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,14 +8,12 @@ const app = express();
 
 app.use(cors());
 
-mongoose.connect(
-"mongodb://127.0.0.1:27017/academic_system"
-)
-
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
-
     console.log("MongoDB Connected");
-
+})
+.catch((err) => {
+    console.log(err);
 });
 
 const studentSchema = new mongoose.Schema({
@@ -39,7 +39,7 @@ const Student = mongoose.model(
     studentSchema
 );
 
-app.get("/student/:usn", async(req,res)=>{
+app.get("/student/:usn", async(req, res) => {
 
     const usn = req.params.usn;
 
@@ -55,17 +55,21 @@ app.get("/student/:usn", async(req,res)=>{
     else{
 
         res.json({
+
             message: "Student Not Found"
+
         });
 
     }
 
 });
 
-app.listen(3000, ()=>{
+app.listen(3000, () => {
 
     console.log(
+
         "Server Running on Port 3000"
+
     );
 
 });
