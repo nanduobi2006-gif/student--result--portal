@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>TOCE Student Result Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- SEARCH SECTION -->
+
+    <div class="search-box">
+
+        <h1>TOCE Student Result Portal</h1>
+
+        <input
+            type="text"
+            id="usn"
+            placeholder="Enter USN"
+        >
+
+        <button onclick="getResult()">
+            Check Result
+        </button>
+
+    </div>
+
+
+    <!-- MARKS CARD -->
+
+    <div class="container">
+
+        <div style="text-align:center;">
+
+            <div class="college-name">
+                THE OXFORD COLLEGE OF ENGINEERING
+            </div>
+
+            <div class="college-address">
+                Bengaluru, Karnataka, India
+            </div>
+
+            <br>
+
+            <div class="result-title">
+                PROVISIONAL RESULTS OF UG EXAMINATION
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <!-- STUDENT DETAILS -->
+
+        <table border="1" width="100%" cellspacing="0">
+
+            <tr>
+                <td><b>University Seat Number</b></td>
+                <td id="student-usn"></td>
+            </tr>
+
+            <tr>
+                <td><b>Student Name</b></td>
+                <td id="student-name"></td>
+            </tr>
+
+            <tr>
+                <td><b>Semester</b></td>
+                <td id="semester"></td>
+            </tr>
+
+        </table>
+
+        <br><br>
+
+        <!-- MARKS TABLE -->
+
+        <table border="1" width="100%" cellspacing="0">
+
+            <thead>
+
+                <tr>
+
+                    <th>Subject Code</th>
+
+                    <th>Subject Name</th>
+
+                    <th>Marks</th>
+
+                    <th>Result</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="marks-body">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
