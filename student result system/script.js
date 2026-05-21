@@ -3,7 +3,7 @@ async function getResult() {
     const usn = document.getElementById("usn").value;
 
     const response = await fetch(
-        `https://student-result-portal-1-8rze.onrender.com/student/${usn}`
+        `https://student-result-portal-3.onrender.com/student/${usn}')`
     );
 
     const data = await response.json();
