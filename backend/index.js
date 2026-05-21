@@ -35,7 +35,7 @@ const studentSchema = new mongoose.Schema({
 });
 
 const Student = mongoose.model(
-    "students",
+    "student",
     studentSchema
 );
 
